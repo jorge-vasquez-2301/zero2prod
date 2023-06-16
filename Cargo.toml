@@ -26,6 +26,8 @@ tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 # unnecessary dependencies for projects that do not need it.
 serde = { version = "1", features = ["derive"] }
 config = "0.13"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4.22", default-features = false, features = ["clock"] }
 
 # Using table-like toml syntax to avoid a super-long line!
 [dependencies.sqlx]
