@@ -38,6 +38,7 @@ pub fn get_configuration() -> Result<Settings, config::ConfigError> {
             config::FileFormat::Yaml,
         ))
         .build()?;
+
     // Try to convert the configuration values it read into
     // our Settings type
     settings.try_deserialize::<Settings>()
