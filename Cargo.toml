@@ -25,6 +25,7 @@ tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 # The feature is not enabled by default to avoid pulling in
 # unnecessary dependencies for projects that do not need it.
 serde = { version = "1", features = ["derive"] }
+config = "0.13"
 
 # Using table-like toml syntax to avoid a super-long line!
 [dependencies.sqlx]
