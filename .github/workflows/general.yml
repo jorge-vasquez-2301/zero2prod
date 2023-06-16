@@ -65,8 +65,11 @@ jobs:
       - name: Install postgresql-client
         run: sudo apt-get update && sudo apt-get install postgresql-client -y
 
+      - name: Set permissions
+        run: chmod +x ./scripts/init_db.sh
+
       - name: Migrate database
-        run: SKIP_DOCKER=true chmod +x scripts/init_db.sh && ./scripts/init_db.sh
+        run: SKIP_DOCKER=true ./scripts/init_db.sh
 
       - name: Run tests
         run: cargo test
@@ -114,8 +117,10 @@ jobs:
             --locked
       - name: Install postgresql-client
         run: sudo apt-get update && sudo apt-get install postgresql-client -y
+      - name: Set permissions
+        run: chmod +x ./scripts/init_db.sh
       - name: Migrate database
-        run: SKIP_DOCKER=true chmod +x scripts/init_db.sh && ./scripts/init_db.sh
+        run: SKIP_DOCKER=true ./scripts/init_db.sh
       - name: Linting
         run: cargo clippy -- -D warnings
 
@@ -148,7 +153,9 @@ jobs:
           --features ${{ env.SQLX_FEATURES }}
           --no-default-features
           --locked
+      - name: Set permissions
+        run: chmod +x ./scripts/init_db.sh
       - name: Migrate database
-        run: SKIP_DOCKER=true chmod +x scripts/init_db.sh && ./scripts/init_db.sh
+        run: SKIP_DOCKER=true ./scripts/init_db.sh
       - name: Generate code coverage
         run: cargo install cargo-tarpaulin && cargo tarpaulin --verbose --workspace
