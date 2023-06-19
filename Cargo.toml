@@ -52,3 +52,4 @@ features = [
 # They do not get included in the final application binary!
 [dev-dependencies]
 reqwest = "0.11"
+once_cell = "1"
