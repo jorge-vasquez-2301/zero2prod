@@ -48,6 +48,7 @@ features = [
     "uuid",
     "chrono",
     "migrate",
+    "offline",
 ]
 
 # Dev dependencies are used exclusively when running tests or examples
