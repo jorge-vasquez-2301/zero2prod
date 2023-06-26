@@ -54,10 +54,15 @@ features = [
     "offline",
 ]
 
+[dependencies.reqwest]
+version = "0.11"
+default-features = false
+# We need the `json` feature flag to serialize/deserialize JSON payloads
+features = ["json", "rustls-tls"]
+
 # Dev dependencies are used exclusively when running tests or examples
 # They do not get included in the final application binary!
 [dev-dependencies]
-reqwest = "0.11"
 once_cell = "1"
 claims = "0.7"
 fake = "~2.3"
