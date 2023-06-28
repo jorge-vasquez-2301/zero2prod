@@ -4,6 +4,8 @@ use anyhow::Context;
 use sqlx::PgPool;
 use uuid::Uuid;
 
+use super::error_chain_fmt;
+
 #[derive(serde::Deserialize)]
 pub struct Parameters {
     subscription_token: String,
@@ -76,19 +78,4 @@ pub async fn get_subscriber_id_from_token(
     .await?;
 
     Ok(result.map(|r| r.subscriber_id))
-}
-
-fn error_chain_fmt(
-    e: &impl std::error::Error,
-    f: &mut std::fmt::Formatter<'_>,
-) -> std::fmt::Result {
-    writeln!(f, "{e}\n")?;
-
-    let mut current = e.source();
-
-    while let Some(cause) = current {
-        writeln!(f, "Caused by:\n\t{cause}")?;
-        current = cause.source();
-    }
-    Ok(())
 }
