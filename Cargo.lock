@@ -2746,6 +2746,7 @@ version = "0.1.0"
 dependencies = [
  "actix-web",
  "anyhow",
+ "base64 0.21.2",
  "chrono",
  "claims",
  "config",
