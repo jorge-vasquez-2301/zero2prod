@@ -48,6 +48,7 @@ urlencoding = "2"
 htmlescape = "0.3"
 actix-web-flash-messages = { version = "0.4", features = ["cookies"] }
 actix-session = { version = "0.7", features = ["redis-rs-tls-session"] }
+serde_json = "1"
 
 # Using table-like toml syntax to avoid a super-long line!
 [dependencies.sqlx]
@@ -78,5 +79,4 @@ fake = "~2.3"
 quickcheck = "0.9.2"
 quickcheck_macros = "0.9.1"
 wiremock = "0.5"
-serde_json = "1"
 linkify = "0.9"
