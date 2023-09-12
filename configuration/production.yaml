@@ -6,4 +6,4 @@ email_client:
   # Value retrieved from Postmark's API documentation
   base_url: "https://api.postmarkapp.com"
   # Use the single sender email you authorised on Postmark!
-  sender_email: "jorge.vasquez@scalac.io"
+  sender_email: ""
